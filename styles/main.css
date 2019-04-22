@@ -13,14 +13,14 @@ html, body {
 .container {
   max-width: 980px;
   margin: 0 auto;
+  border: 1px solid gray;
 }
-article h3 {
+main div p {
   color: var(--main-color);
 }
 .header {
   height: 100vh;
   background-color: transparent;
-  border: 1px solid gray;
   position: relative;
   background: url(../img/main-bg.jpg) center no-repeat;
 }
