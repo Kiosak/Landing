@@ -14,7 +14,7 @@ html, body {
   max-width: 980px;
   margin: 0 auto;
 }
-section p {
+article h3 {
   color: var(--main-color);
 }
 .header {
