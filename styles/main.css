@@ -1,46 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Aladin');
+
 :root {
-  --main-color: #131313;
+  --primary-color: #131313;
   --header-color: #f66f00;
+  --main-paragraph-color: #fff;
   --footer-color: #eeeded;
+  --bg-darken: #00000060;
+}
+* {
+	box-sizing: border-box;
 }
 html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  color: var(--header-color);
-  border: 1px solid #eee;
+  font-family: 'Aladin', cursive;
+  background-color: #0000001f;
 }
 .container {
   max-width: 980px;
   margin: 0 auto;
   border: 1px solid gray;
 }
-main div p {
-  color: var(--main-color);
-}
-.header {
-  height: 100vh;
-  background-color: transparent;
-  position: relative;
+header {
   background: url(../img/main-bg.jpg) center no-repeat;
+  color: var(--header-color);
+  position: relative;
+  height: 650px;
 }
-.header h1 {
+header h1 {
   position: absolute;
   width: 300px;
-  top: 80px;
+  top: 50px;
   left: 40px;
   font-size: 3rem;
 }
 .logo {
-  height: 40px;
-  float: left;
+  height: 50px;
 }
 .header__menu {
-  list-style: none;
-  float: right;
+  display: flex;
   align-items: center;
+  height: 60px;
+}
+.header__menu-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   padding: 0;
   margin: 0;
+  flex: 1;
 }
 .header__menu-item {
   display: inline;
@@ -50,7 +59,7 @@ main div p {
   text-decoration: none;
   padding: 11px 10px;
   line-height: 40px;
-  position: relative;
+  color: var(--header-color);
 }
 .header__menu-link:hover {
   text-decoration: underline;
@@ -60,8 +69,100 @@ main div p {
   width: 250px;
   font-size: 48px;
 }
+main > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: darken;
+}
+main > div > p {
+  color: var(--main-paragraph-color);
+  font-size: 20px;
+  display: block;
+  max-width: 750px;
+  height: 110px;
+  padding: 10px;
+}
+.description {
+  background: url(../img/lake-ereen.jpg) center no-repeat, var(--bg-darken);
+  height: 585px;
+}
+.subject:nth-child(2) {
+  background: url(../img/pack_in_flight.jpg) center no-repeat, var(--bg-darken);
+  height: 585px;
+}
+.subject:nth-child(3) {
+  background: url(../img/pack.jpg) center no-repeat, var(--bg-darken);
+  height: 585px;
+}
+.subject:nth-child(4) {
+  background: url(../img/constructor.jpg) center no-repeat, var(--bg-darken);
+  height: 585px;
+}
+.conclusion {
+  background: url(../img/trees.jpg) center no-repeat, var(--bg-darken);
+  height: 585px;
+}
+.subscribe {
+  background: url(../img/crash.jpg) center no-repeat, var(--bg-darken);
+  background-size: cover;
+  height: 500px;
+}
+.subscribe form {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.subscribe form input {
+  height: 40px;
+  width: 100%;
+}
+.subscribe form input, .subscribe form textarea {
+  opacity: 0.9;
+}
+.subscribe form label {
+  display: block;
+  color: var(--main-paragraph-color);
+}
+.subscribe form textarea {
+  height: 120px;
+  width: 100%;
+}
 footer {
   height: 180px;
   color: var(--footer-color);
   background-color: #131313;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+footer p {
+	font-size: 1.5rem;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+/* For mobile phones: */
+@media only screen and (max-width: 599px) {
+	[class="col-"] {
+		flex-direction: column;
+		width: 100%;
+	}
+}
+/* For desctop */
+@media only screen and (min-width: 600px) {
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
 }
