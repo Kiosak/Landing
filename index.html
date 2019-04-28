@@ -4,10 +4,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Lesson 2</title>
+	<title>Grand Tour - road trip to Mongolia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
 </head>
 
 <body>
@@ -15,6 +17,12 @@
 		<header>
 			<div class="header__menu">
 				<img src="img/logo.png" alt="logo" class="logo">
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header__menu"
+					aria-controls="header__menu" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+
 				<ul class="header__menu-list">
 					<li class="header__menu-item">
 						<a href="#description" class="header__menu-link">Описание</a>
@@ -30,32 +38,45 @@
 					</li>
 				</ul>
 			</div>
-			<h1>Road trip to Mongolia</h1>
 		</header>
+
 		<main>
+			<div class="main-bg">
+				<h1>Road trip to Mongolia</h1>
+			</div>
 			<div class="description" id="description">
 				<p>
-					В полнометражном выпуске «Гранд тур» рассказывают об одном изтех эпизодов, в которых они не возвращаются в палатку, гдеделают маленькие шутки и смотрят на фотографию нового McLaren.Джереми, Ричард и Джеймс	брошены в пустыню Монголии и имприказано ждать доставки.
+					В полнометражном выпуске «Гранд тур» рассказывают об одном изтех эпизодов, в которых они не возвращаются
+					в палатку, гдеделают маленькие шутки и смотрят на фотографию нового McLaren.Джереми, Ричард и Джеймс
+					брошены в пустыню Монголии и имприказано ждать доставки.
 				</p>
 			</div>
 			<div class="subject" id="subject">
-				<p>
-					Воздух разлетается на части от удара лопастей несущего винта, когда военный вертолет поднимается в поле зрения и сбрасывает несколько коробок.
-				</p>
-			</div>
-			<div class="subject">
-				<p>
-					К сожалению для докладчиков, в них нет чего-то полезного, например, Toyota Hilux или другого, меньшего по	размеру вертолета.
-				</p>
-			</div>
-			<div class="subject">
-				<p>
-					Вместо этого они заполнены основными рационами и всеми необходимыми деталями для сборки небольшой внедорожной машины, с помощью которой нужно добраться до цивилизации, прежде чем они умрут от голода или задушат друг	друга.
-				</p>
+				<div>
+					<p>
+						Воздух разлетается на части от удара лопастей несущего винта, когда военный вертолет поднимается в
+						поле зрения и сбрасывает несколько коробок.
+					</p>
+				</div>
+				<div>
+					<p>
+						К сожалению для докладчиков, в них нет чего-то полезного, например, Toyota Hilux или другого, меньшего
+						по размеру вертолета.
+					</p>
+				</div>
+				<div>
+					<p>
+						Вместо этого они заполнены основными рационами и всеми необходимыми деталями для сборки небольшой
+						внедорожной машины, с помощью которой нужно добраться до цивилизации, прежде чем они умрут от голода
+						или задушат друг друга.
+					</p>
+				</div>
 			</div>
 			<div class="conclusion" id="conclusion">
 				<p>
-					Далее следует невероятное приключение и стремление к выживанию на фоне необычного ландшафта. Выживут ли они? Ну, вы, вероятно, можете угадать ответ. Просто собрать эту чертову штуку было достаточно, чтобы Джеймс захотел	забить Джереми выпускным коллектором.
+					Далее следует невероятное приключение и стремление к выживанию на фоне необычного ландшафта. Выживут ли
+					они? Ну, вы, вероятно, можете угадать ответ. Просто собрать эту чертову штуку было достаточно, чтобы
+					Джеймс захотел забить Джереми выпускным коллектором.
 				</p>
 			</div>
 			<div class="subscribe" id="subscribe">
@@ -76,7 +97,11 @@
 							<textarea name="recomendations" id="recomendations" placeholder="Ваши пожелания"></textarea>
 						</div>
 					</div>
-					<input type="submit" value="Подписаться">
+					<div class="row">
+						<div class="col text-center">
+							<input id="submit" type="submit" value="Подписаться">
+						</div>
+					</div>
 				</form>
 			</div>
 		</main>
