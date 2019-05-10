@@ -123,6 +123,7 @@ main > div p {
    color: #ffffff;
    text-align: justify;
    font-size: 20px;
+   line-height: 2rem;
    max-width: 500px;
    padding: 0 10px;
 }
@@ -317,6 +318,10 @@ footer p {
 
    .show {
       display: none;
+   }
+
+   main > div p {
+      line-height: 3rem;
    }
 
    .header__menu-list {
