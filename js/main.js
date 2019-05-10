@@ -22,6 +22,15 @@ const toggleMobileMenu = () => {
 
 navbarToggler.addEventListener('click', toggleMobileMenu);
 
+const onHeaderItemClick = document.querySelectorAll('.header__menu-item');
+
+for (const headerItemClick of onHeaderItemClick) {
+   headerItemClick.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+      toggleIcons();
+   });
+}
+
 window.addEventListener('resize', e => {
    if (e.target.innerWidth > 700) {
       mobileMenu.classList.remove('show');
