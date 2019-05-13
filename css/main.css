@@ -10,7 +10,7 @@ body {
    margin: 0;
    padding: 0;
    font-family: 'Aladin', cursive;
-   background-color: rgba(0, 0, 0, 0.122);
+   background-color: rgba(0, 0, 0, 0.5);
    scroll-behavior: smooth;
 }
 
@@ -23,6 +23,11 @@ body {
 header {
    color: #f66f00;
    background-color: #ffffff;
+}
+
+.collapse:not(.show) {
+   display: none;
+   margin-right: 20px;
 }
 
 .header__menu {
@@ -52,8 +57,37 @@ header {
 }
 
 .header__menu-item {
-   display: inline;
-   padding: 0 10px;
+   display: inline-block;
+   padding: 0 5px;
+   position: relative;
+}
+
+.header__menu-item:before,
+.header__menu-item:after {
+   content: '';
+   background-color: #f66f00;
+   position: absolute;
+   bottom: 0px;
+   width: 0;
+   height: 3px;
+   transition: all 0.5s;
+}
+
+.header__menu-item:before {
+   left: 52%;
+}
+
+.header__menu-item:after {
+   left: 50%;
+}
+
+.header__menu-item:hover:before {
+   width: 50%;
+   left: 0;
+}
+
+.header__menu-item:hover:after {
+   width: 50%;
 }
 
 .header__menu-link {
@@ -61,10 +95,6 @@ header {
    padding: 11px 10px;
    line-height: 40px;
    color: #f66f00;
-}
-
-.header__menu-link:hover {
-   text-decoration: underline;
 }
 
 .navbar-toggler {
@@ -77,10 +107,6 @@ header {
    font-size: 35px;
    margin-right: 20px;
    z-index: 30;
-}
-
-.collapse:not(.show) {
-   display: none;
 }
 
 .show .header__menu-list {
@@ -130,7 +156,7 @@ main > div p {
 
 .main-bg {
    color: #f66f00;
-   background: url(../img/main-bg.jpg) left / cover no-repeat;
+   background: url(../img/main-bg.jpg) left no-repeat;
    position: relative;
    min-height: 383px;
 }
@@ -195,7 +221,16 @@ main > div p {
    width: 100%;
    margin: 10px 0;
    padding: 10px;
-   opacity: 0.8;
+   opacity: 0.7;
+}
+
+.subscribe form input:focus,
+.subscribe form textarea:focus {
+   opacity: 1;
+}
+
+.subscribe form input[type='submit'] {
+   cursor: pointer;
 }
 
 .subscribe form label {
@@ -261,36 +296,47 @@ footer p {
    .col-1 {
       width: 8.33%;
    }
+
    .col-2 {
       width: 16.66%;
    }
+
    .col-3 {
       width: 25%;
    }
+
    .col-4 {
       width: 33.33%;
    }
+
    .col-5 {
       width: 41.66%;
    }
+
    .col-6 {
       width: 50%;
    }
+
    .col-7 {
       width: 58.33%;
    }
+
    .col-8 {
       width: 66.66%;
    }
+
    .col-9 {
       width: 75%;
    }
+
    .col-10 {
       width: 83.33%;
    }
+
    .col-11 {
       width: 91.66%;
    }
+
    .col-12 {
       width: 100%;
    }
@@ -353,4 +399,25 @@ footer p {
       max-width: 300px;
       font-size: 3rem;
    }
+}
+
+#goToTopBtn {
+   display: none;
+   position: fixed;
+   bottom: 20px;
+   right: 30px;
+   z-index: 99;
+   font-size: 1.5rem;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   color: white;
+   cursor: pointer;
+   padding: 15px;
+   border: 1px solid;
+   border-radius: 4px;
+   width: 50px;
+   height: 50px;
+   overflow: hidden;
+   padding: 0;
 }
