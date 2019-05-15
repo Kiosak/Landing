@@ -1,11 +1,14 @@
-const submit = document.getElementById('submit');
-
-const mobileMenu = document.querySelector('.collapse');
+const headerItems = document.querySelectorAll('.header__menu-item');
 const navbarToggler = document.querySelector('.navbar-toggler');
+const goToTopBtn = document.querySelector('#goToTopBtn');
+const mobileMenu = document.querySelector('.collapse');
+const MinDeviceWidth = 700;
+const MinDeviceScroll = 300;
+const DeviceTop = 0;
 
-const toggleIcons = () => {
-   navbarToggler.classList.toggle('fa-bars');
-   navbarToggler.classList.toggle('fa-times');
+const onHeaderItemClick = () => {
+   mobileMenu.classList.remove('show');
+   toggleIcons();
 };
 
 const toggleMobileMenu = () => {
@@ -13,19 +16,26 @@ const toggleMobileMenu = () => {
    toggleIcons();
 };
 
-navbarToggler.addEventListener('click', toggleMobileMenu);
+const toggleIcons = () => {
+   navbarToggler.classList.toggle('fa-bars');
+   navbarToggler.classList.toggle('fa-times');
+};
 
-const onHeaderItemClick = document.querySelectorAll('.header__menu-item');
+const goToTop = () => {
+   document.body.scrollTop = DeviceTop;
+   document.documentElement.scrollTop = DeviceTop;
+};
 
-for (const headerItemClick of onHeaderItemClick) {
-   headerItemClick.addEventListener('click', () => {
-      mobileMenu.classList.remove('show');
-      toggleIcons();
-   });
+for (let headerItem of headerItems) {
+   headerItem.addEventListener('click', onHeaderItemClick);
 }
 
+navbarToggler.addEventListener('click', toggleMobileMenu);
+
+goToTopBtn.addEventListener('click', goToTop);
+
 window.addEventListener('resize', e => {
-   if (e.target.innerWidth > 700) {
+   if (e.target.innerWidth > MinDeviceWidth) {
       mobileMenu.classList.remove('show');
       if (navbarToggler.classList.contains('fa-times')) {
          toggleIcons();
@@ -33,15 +43,10 @@ window.addEventListener('resize', e => {
    }
 });
 
-document.querySelector('#goToTopBtn').addEventListener('click', () => {
-   document.body.scrollTop = 0;
-   document.documentElement.scrollTop = 0;
-});
-
-window.addEventListener('scroll', e => {
-   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      document.querySelector('#goToTopBtn').style.display = 'block';
+window.addEventListener('scroll', () => {
+   if (document.body.scrollTop > MinDeviceScroll || document.documentElement.scrollTop > MinDeviceScroll) {
+      goToTopBtn.style.display = 'block';
    } else {
-      document.querySelector('#goToTopBtn').style.display = 'none';
+      goToTopBtn.style.display = 'none';
    }
 });
