@@ -21,7 +21,7 @@
             <div class="header__menu">
                <img src="img/logo.png" alt="logo" class="logo" />
 
-               <nav class="collapse">
+               <nav class="header__menu-container">
                   <ul class="header__menu-list">
                      <li class="header__menu-item">
                         <a href="#description" class="header__menu-link">Описание</a>
@@ -90,7 +90,14 @@
                      </div>
                      <div class="col col-6">
                         <label for="email">Ваша Почта:</label>
-                        <input type="email" name="email" id="email" placeholder="Ваша Почта" pattern="\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}" required />
+                        <input
+                           type="email"
+                           name="email"
+                           id="email"
+                           placeholder="Ваша Почта"
+                           pattern="\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}"
+                           required
+                        />
                      </div>
                   </div>
                   <div class="row">
