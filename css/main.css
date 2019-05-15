@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Aladin');
 
+/* For mobile phones: */
 * {
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
@@ -149,7 +150,7 @@ main > div p {
    color: #ffffff;
    text-align: justify;
    font-size: 20px;
-   line-height: 2rem;
+   line-height: 2em;
    max-width: 500px;
    padding: 0 10px;
 }
@@ -224,6 +225,14 @@ main > div p {
    opacity: 0.7;
 }
 
+.subscribe form input:not([type='submit']):invalid {
+   outline-color: #ff0000;
+}
+
+.subscribe form input:not([type='submit']):valid {
+   outline-color: #008000;
+}
+
 .subscribe form input:focus,
 .subscribe form textarea:focus {
    opacity: 1;
@@ -231,6 +240,18 @@ main > div p {
 
 .subscribe form input[type='submit'] {
    cursor: pointer;
+   text-transform: uppercase;
+   transition: all 0.4s;
+}
+
+.subscribe form input[type='submit']:hover {
+   opacity: 1;
+   background-color: #f66f00;
+   color: aliceblue;
+}
+
+.subscribe form input[type='submit']:focus {
+   outline: none;
 }
 
 .subscribe form label {
@@ -265,7 +286,28 @@ footer {
 }
 
 footer p {
-   font-size: 1.5rem;
+   font-size: 1.5em;
+}
+
+#goToTopBtn {
+   display: none;
+   position: fixed;
+   bottom: 20px;
+   right: 30px;
+   z-index: 99;
+   font-size: 1.5em;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   color: white;
+   cursor: pointer;
+   padding: 15px;
+   border: 1px solid;
+   border-radius: 4px;
+   width: 50px;
+   height: 50px;
+   overflow: hidden;
+   padding: 0;
 }
 
 .text-center {
@@ -285,7 +327,6 @@ footer p {
    width: 100%;
 }
 
-/* For mobile phones: */
 [class~='col'] {
    width: 100%;
    padding: 5px 10px;
@@ -367,7 +408,7 @@ footer p {
    }
 
    main > div p {
-      line-height: 3rem;
+      line-height: 3em;
    }
 
    .header__menu-list {
@@ -397,27 +438,6 @@ footer p {
    .main-bg h1 {
       top: 50px;
       max-width: 300px;
-      font-size: 3rem;
+      font-size: 3em;
    }
-}
-
-#goToTopBtn {
-   display: none;
-   position: fixed;
-   bottom: 20px;
-   right: 30px;
-   z-index: 99;
-   font-size: 1.5rem;
-   border: none;
-   outline: none;
-   background-color: transparent;
-   color: white;
-   cursor: pointer;
-   padding: 15px;
-   border: 1px solid;
-   border-radius: 4px;
-   width: 50px;
-   height: 50px;
-   overflow: hidden;
-   padding: 0;
 }
