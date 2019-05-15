@@ -1,52 +1,57 @@
-const headerItems = document.querySelectorAll('.header__menu-item');
-const navbarToggler = document.querySelector('.navbar-toggler');
-const goToTopBtn = document.querySelector('#goToTopBtn');
-const mobileMenu = document.querySelector('.collapse');
-const MinDeviceWidth = 700;
-const MinDeviceScroll = 300;
-const DeviceTop = 0;
+const Nodes = {
+   headerItems: document.querySelectorAll('.header__menu-item'),
+   navbarToggler: document.querySelector('.navbar-toggler'),
+   goToTopBtn: document.querySelector('#goToTopBtn'),
+   headerMenuContainer: document.querySelector('.header__menu-container'),
+};
+
+const Device = {
+   minWidth: 700,
+   minScroll: 300,
+   top: 0,
+};
 
 const onHeaderItemClick = () => {
-   mobileMenu.classList.remove('show');
+   Nodes.headerMenuContainer.classList.remove('show');
    toggleIcons();
 };
 
-const toggleMobileMenu = () => {
-   mobileMenu.classList.toggle('show');
+const toggleHeaderMenuContainer = () => {
+   Nodes.headerMenuContainer.classList.toggle('show');
    toggleIcons();
 };
 
 const toggleIcons = () => {
-   navbarToggler.classList.toggle('fa-bars');
-   navbarToggler.classList.toggle('fa-times');
+   Nodes.navbarToggler.classList.toggle('fa-bars');
+   Nodes.navbarToggler.classList.toggle('fa-times');
 };
 
 const goToTop = () => {
-   document.body.scrollTop = DeviceTop;
-   document.documentElement.scrollTop = DeviceTop;
+   document.body.scrollTop = Device.top;
+   document.documentElement.scrollTop = Device.top;
 };
 
-for (let headerItem of headerItems) {
+for (let headerItem of Nodes.headerItems) {
    headerItem.addEventListener('click', onHeaderItemClick);
 }
 
-navbarToggler.addEventListener('click', toggleMobileMenu);
+Nodes.navbarToggler.addEventListener('click', toggleHeaderMenuContainer);
 
-goToTopBtn.addEventListener('click', goToTop);
+Nodes.goToTopBtn.addEventListener('click', goToTop);
 
 window.addEventListener('resize', e => {
-   if (e.target.innerWidth > MinDeviceWidth) {
-      mobileMenu.classList.remove('show');
-      if (navbarToggler.classList.contains('fa-times')) {
+   if (e.target.innerWidth > Device.minWidth) {
+      Nodes.headerMenuContainer.classList.remove('show');
+      if (Nodes.navbarToggler.classList.contains('fa-times')) {
          toggleIcons();
       }
    }
 });
 
 window.addEventListener('scroll', () => {
-   if (document.body.scrollTop > MinDeviceScroll || document.documentElement.scrollTop > MinDeviceScroll) {
-      goToTopBtn.style.display = 'block';
+   if (document.body.scrollTop > Device.minScroll || document.documentElement.scrollTop > Device.minScroll) {
+      Nodes.goToTopBtn.style.display = 'block';
    } else {
-      goToTopBtn.style.display = 'none';
+      Nodes.goToTopBtn.style.display = 'none';
    }
 });
